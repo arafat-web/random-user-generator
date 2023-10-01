@@ -11,11 +11,30 @@
 <body>
 
     <div id="app">
-        
-        <img v-bind:src="picture" :class="gender" v-bind:alt="`${firstName} ${lastName}`"/>
-        <h1>{{firstName}} {{lastName}}</h1>
-        <h3>Email: {{email}}</h3>
-        <button v-on:click="getUser()" :class="gender">Get Random User</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card me-4">
+                        <img v-bind:src="picture" :class="gender" v-bind:alt="`${firstName} ${lastName}`" />
+                        <p>Hi, My name is</p>
+                        <h1>{{title}} {{firstName}} {{lastName}}</h1>
+                        <button v-on:click="getUser()" :class="gender">Change</button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <ul>
+                            <li :class="gender"> <span>Email: </span> {{email}}</li>
+                            <li :class="gender"> <span>Phone: </span> {{phone}}</li>
+                            <li :class="gender"> <span>Age:</span> {{age}} </li>
+                            <li :class="gender"> <span>City: </span> {{city}}</li>
+                            <li :class="gender"> <span>State: </span> {{state}}</li>
+                            <li :class="gender"> <span>State: </span> {{country}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
